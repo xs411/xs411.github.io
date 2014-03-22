@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Securious]]></title>
+  <link href="http://xs411.github.io/atom.xml" rel="self"/>
+  <link href="http://xs411.github.io/"/>
+  <updated>2014-03-22T14:14:21-07:00</updated>
+  <id>http://xs411.github.io/</id>
+  <author>
+    <name><![CDATA[securious]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Using Cross Origin Resource Sharing (CORS) Securely]]></title>
+    <link href="http://xs411.github.io/blog/2013/09/14/using-cross-origin-resource-sharing-cors-securely/"/>
+    <updated>2013-09-14T17:54:00-07:00</updated>
+    <id>http://xs411.github.io/blog/2013/09/14/using-cross-origin-resource-sharing-cors-securely</id>
+    <content type="html"><![CDATA[<p>Recently, I&rsquo;ve run across some applications using <a href="https://en.wikipedia.org/wiki/Cross-Origin_Resource_Sharing">Cross Origin Resource Sharing (CORS)</a>. I needed to study up on the topic and realized this is a feature that needs to be implemented with care. Below I&rsquo;ve document what I learned in hopes that it will help others.</p>
+
+<h2>What is Cross Origin Resource Sharing?</h2>
+
+<p>Cross Origin Resource Sharing is a method of sharing data between two domains using JavaScript with HTTP headers under the hood. This normally would not be allowed due to the <a href="http://www.w3.org/Security/wiki/Same_Origin_Policy">Same Origin Policy</a>. However, developers often need the ability to share data between two domains(websites) and thus Cross Origin Resource Sharing was added with the release of HTML 5.</p>
+
+<h2>How Do I use Cross Origin Resource Sharing?</h2>
+
+<p>A very good explanation of the details of using CORS is explained here: <a href="http://www.html5rocks.com/en/tutorials/cors/">http://www.html5rocks.com/en/tutorials/cors/</a>. At a high level, you use JavaScript to make a request to another domain. The second domain responds with special headers that specify the authorization policy. If the request is authorized, the resource requested is returned to the page with the headers. Then JavaScript event handlers are triggered to handle the processing of the data.</p>
+
+<h2>Security Concerns</h2>
+
+<p>When setting your CORS policy, you must configure a policy that makes sense for the data and functionality that is specific to your website and the needs of the business. The key concerns are:</p>
+
+<ol>
+<li>Don&rsquo;t enable CORS on resources you don&rsquo;t want to share across domains.</li>
+<li>Only grant access to domains that need access.</li>
+<li>If the data is sensitive, use appropriate supporting controls:
+
+<ol type="a">
+<li>Use authentication and the &ldquo;withCredentials&rdquo; property.</li>
+<li>Use a secure (HTTPS) connection.</li>
+</ol>
+</li>
+</ol>
+
+
+<p>By following the <a href="https://en.wikipedia.org/wiki/Principle_of_least_privilege">principle of least privilege</a> and using the correct level of authorization for the data that is being returned these risks can be avoided.</p>
+
+<h2>Security Solutions</h2>
+
+<p>Use the following features of CORS to avoid security concerns (2) and (3A).</p>
+
+<h3>Access-Control-Allow-Origin</h3>
+
+<blockquote><p><code>
+Access-Control-Allow-Origin: *
+</code></p></blockquote>
+
+<p>This policy states that any other website can pull information from the responding website. Instead you should specify a specific domain with which you explicitly want to share data. Example:</p>
+
+<blockquote><p><code>
+Access-Control-Allow-Origin: <a href="http://securio.us">http://securio.us</a>
+</code></p></blockquote>
+
+<p>Additionally, the server should be configured to only respond to CORS requests for specific resources that you want to share. So, rather than setting up CORS requests for an entire domain (ex: <a href="http://securio.us">http://securio.us</a>), only setup Cross Origin Resource Sharing on a specific page (ex: <a href="http://securio.us/public">http://securio.us/public</a>). There isn&rsquo;t really a &ldquo;one size fits all&rdquo; approach because different sites will need to share their data differently. If the site has no private data/functionality an open policy might actually make sense, though this is generally a bad idea as it is not future proof.</p>
+
+<p>For example, today your site might consist of only public resources. However, if you decide to add a part of the site that . Its a best practice to explicitly state what data is allowed to have access and prevent some data that is public from getting out, than saying everything is open and allowing a lot of private data to leak out. Just keep in mind the security principle of least privilege and only allow access where it is needed.</p>
+
+<h3>withCredentials</h3>
+
+<p>What about when you have data or functionality that is sensitive, but you still want to make it accessible across domains? The &ldquo;withCredentials&rdquo; property can be used for just such a scenario.</p>
+
+<blockquote><p><code>
+xhr.withCredentials = true;
+</code></p></blockquote>
+
+<p>This will instruct the browser to send cookies with the request. Then, the server can verify that the request is authorized.</p>
+
+<h2>Summary</h2>
+
+<p>CORS can be used to solve a common problem in security. However, keep in mind that the Same Origin Policy was put in place to protect users. Cross Origin Resource Sharring should be used as a seasoning for your websites not the main course. Try not to get carried away in using it everywhere.</p>
+
+<h2>References</h2>
+
+<ul>
+<li><a href="http://www.nczonline.net/blog/2010/05/25/cross-domain-ajax-with-cross-origin-resource-sharing/">Cross-Domain AJAX with Cross-Origin Resource Sharing</a></li>
+<li><a href="http://www.html5rocks.com/en/tutorials/cors/">Using CORS Tutorial</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Securious is Now on Octopress]]></title>
+    <link href="http://xs411.github.io/blog/2013/09/08/securious-is-now-on-octopress/"/>
+    <updated>2013-09-08T21:14:00-07:00</updated>
+    <id>http://xs411.github.io/blog/2013/09/08/securious-is-now-on-octopress</id>
+    <content type="html"><![CDATA[<p>You may notice a drastic change in the look and feel of the site. We have recently migrated to <a href="http://octopress.org/">Octopress</a>.
+Octopress is a blog-aware platform that generates static websites based on the
+<a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> language. This makes editing posts on any
+text editor very easy. A static website is a site that
+consists of only HTML, CSS and some JavaScript. The only dynamic aspects of this site are comments and
+search. However, search is performed by <a href="http://www.google.com">Google</a> and comments are done in a separate iFrame by <a href="http://disqus.com/">Disqus</a>. This
+dramatically reduces the security footprint of the website &ndash; a welcome architecture feature
+for a security blog.</p>
+
+<p>More to come soon. Big thanks to <a href="http://twitter.com/coryfoo">@coryfoo</a> for the recommendation to use <a href="http://octopress.org/">Octopress</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Curious About Security]]></title>
+    <link href="http://xs411.github.io/blog/2013/08/16/curious-about-security/"/>
+    <updated>2013-08-16T18:16:00-07:00</updated>
+    <id>http://xs411.github.io/blog/2013/08/16/curious-about-security</id>
+    <content type="html"><![CDATA[<p>Securio.us is a small consulting shop that specializes in web application security testing. Our testing methodology identifies
+vulnerabilities covered by the <a href="https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project">OWASP Top 10</a> and the
+<a href="http://projects.webappsec.org/w/page/13246978/Threat%20Classification">WASC Threat Classification</a>. Our consultants are
+<a href="http://www.giac.org/certification/security-essentials-gsec">GSEC</a> certified. We test running applications and attempt to
+subvert security controls by manipulating application inputs. We gather the resulting vulnerabilities that we identify into a
+final report and walk through this document to be sure you understand the issues. Verification of findings may be added at an
+additional cost. We operate on a wide variety of languages, platforms and technologies. We can test web applications, web
+services, and mobile apps on iOS and Android.</p>
+
+<p>We are located in the San Francisco Bay Area in California. If you would like to reach us, please contact us by phone at:
+&#52;15.8&#56;9.&#56;815</p>
+]]></content>
+  </entry>
+  
+</feed>

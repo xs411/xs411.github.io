@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: misc | Securious]]></title>
+  <link href="http://xs411.github.io/blog/categories/misc/atom.xml" rel="self"/>
+  <link href="http://xs411.github.io/"/>
+  <updated>2014-03-22T14:14:21-07:00</updated>
+  <id>http://xs411.github.io/</id>
+  <author>
+    <name><![CDATA[securious]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Securious is Now on Octopress]]></title>
+    <link href="http://xs411.github.io/blog/2013/09/08/securious-is-now-on-octopress/"/>
+    <updated>2013-09-08T21:14:00-07:00</updated>
+    <id>http://xs411.github.io/blog/2013/09/08/securious-is-now-on-octopress</id>
+    <content type="html"><![CDATA[<p>You may notice a drastic change in the look and feel of the site. We have recently migrated to <a href="http://octopress.org/">Octopress</a>.
+Octopress is a blog-aware platform that generates static websites based on the
+<a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> language. This makes editing posts on any
+text editor very easy. A static website is a site that
+consists of only HTML, CSS and some JavaScript. The only dynamic aspects of this site are comments and
+search. However, search is performed by <a href="http://www.google.com">Google</a> and comments are done in a separate iFrame by <a href="http://disqus.com/">Disqus</a>. This
+dramatically reduces the security footprint of the website &ndash; a welcome architecture feature
+for a security blog.</p>
+
+<p>More to come soon. Big thanks to <a href="http://twitter.com/coryfoo">@coryfoo</a> for the recommendation to use <a href="http://octopress.org/">Octopress</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Curious About Security]]></title>
+    <link href="http://xs411.github.io/blog/2013/08/16/curious-about-security/"/>
+    <updated>2013-08-16T18:16:00-07:00</updated>
+    <id>http://xs411.github.io/blog/2013/08/16/curious-about-security</id>
+    <content type="html"><![CDATA[<p>Securio.us is a small consulting shop that specializes in web application security testing. Our testing methodology identifies
+vulnerabilities covered by the <a href="https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project">OWASP Top 10</a> and the
+<a href="http://projects.webappsec.org/w/page/13246978/Threat%20Classification">WASC Threat Classification</a>. Our consultants are
+<a href="http://www.giac.org/certification/security-essentials-gsec">GSEC</a> certified. We test running applications and attempt to
+subvert security controls by manipulating application inputs. We gather the resulting vulnerabilities that we identify into a
+final report and walk through this document to be sure you understand the issues. Verification of findings may be added at an
+additional cost. We operate on a wide variety of languages, platforms and technologies. We can test web applications, web
+services, and mobile apps on iOS and Android.</p>
+
+<p>We are located in the San Francisco Bay Area in California. If you would like to reach us, please contact us by phone at:
+&#52;15.8&#56;9.&#56;815</p>
+]]></content>
+  </entry>
+  
+</feed>

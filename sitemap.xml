@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+    <url>
+        <loc>http://xs411.github.io/blog/2013/08/16/curious-about-security/</loc>
+        <lastmod>2013-09-10T22:05:24-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://xs411.github.io/blog/2013/09/08/securious-is-now-on-octopress/</loc>
+        <lastmod>2013-09-10T18:31:36-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://xs411.github.io/blog/2013/09/14/using-cross-origin-resource-sharing-cors-securely/
+        </loc>
+        <lastmod>2013-10-29T23:18:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://xs411.github.io/robots.txt</loc>
+        <lastmod>2013-08-16T17:52:54-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://xs411.github.io/contact/</loc>
+        <lastmod>2013-09-10T18:38:18-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://xs411.github.io/blog/archives/</loc>
+        <lastmod>2013-10-29T23:18:42-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://xs411.github.io/</loc>
+        <lastmod>2013-10-29T23:18:42-07:00</lastmod>
+    </url>
+</urlset>
